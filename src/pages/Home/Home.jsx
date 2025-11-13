@@ -12,6 +12,14 @@ function Home() {
       tags: ['React', 'Three.js', 'Canvas', 'CSS'],
       icon: '💳',
     },
+    {
+      id: 'particle-canvas',
+      title: 'Particle Canvas',
+      description: '交互式粒子画布，鼠标移动产生粒子反应，点击产生爆炸效果',
+      path: '/particle-canvas',
+      tags: ['React', 'Canvas', 'Physics', 'Interactive'],
+      icon: '✨',
+    },
     // 后续可以在这里添加更多项目
   ];
 
