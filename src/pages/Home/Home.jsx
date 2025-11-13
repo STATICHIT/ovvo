@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import Navbar from '../../components/Navbar/Navbar';
 import './Home.css';
 
 function Home() {
@@ -16,6 +17,7 @@ function Home() {
 
   return (
     <div className="home">
+      <Navbar />
       <div className="home-container">
         <header className="home-header">
           <h1 className="home-title">OVVO</h1>
@@ -45,10 +47,10 @@ function Home() {
             ))}
           </nav>
         </main>
-
-        <footer className="home-footer">
-          <p>探索更多创意交互体验</p>
-        </footer>
+      </div>
+      
+      <div className="home-signature">
+        <span>STATICHIT • 探索更多创意交互体验</span>
       </div>
     </div>
   );

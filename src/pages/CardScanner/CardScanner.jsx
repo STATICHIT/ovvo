@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import Navbar from '../../components/Navbar/Navbar';
 import './CardScanner.css';
 import { useCardStream } from '../../hooks/cardScanner/useCardStream';
 import { useParticleSystem } from '../../hooks/particles/useParticleSystem';
@@ -25,18 +25,30 @@ function CardScanner() {
 
   return (
     <div className="card-scanner-page">
-      <Link to="/" className="back-home-btn">
-        ← 返回主页
-      </Link>
+      <Navbar />
+      
+      {/* 添加装饰性网格背景 */}
+      <div className="grid-overlay"></div>
+      
+      {/* 添加装饰性光点 */}
+      <div className="ambient-lights">
+        <div className="light-orb light-orb-1"></div>
+        <div className="light-orb light-orb-2"></div>
+        <div className="light-orb light-orb-3"></div>
+      </div>
+      
       <div className="controls">
         <button className="control-btn" onClick={toggleAnimation}>
-          {isPaused ? '▶️ Play' : '⏸️ Pause'}
+          <span className="btn-icon">{isPaused ? '▶' : '❚❚'}</span>
+          {' '}{isPaused ? 'Play' : 'Pause'}
         </button>
         <button className="control-btn" onClick={resetPosition}>
-          🔄 Reset
+          <span className="btn-icon">↻</span>
+          {' '}Reset
         </button>
         <button className="control-btn" onClick={changeDirection}>
-          ↔️ Direction
+          <span className="btn-icon">⇄</span>
+          {' '}Direction
         </button>
       </div>
 

@@ -5,6 +5,7 @@
   align-items: center;
   justify-content: center;
   padding: 2rem;
+  padding-top: calc(2rem + 70px); /* 为导航栏留出空间 */
 }
 
 .home-container {
@@ -15,7 +16,8 @@
 
 .home-header {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
+  margin-top: -2rem;
   animation: fadeInDown 0.8s ease-out;
 }
 
@@ -36,15 +38,18 @@
   letter-spacing: 0.05em;
 }
 
+
 .home-main {
   margin-bottom: 4rem;
 }
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
   animation: fadeInUp 0.8s ease-out 0.2s both;
+  justify-items: center;
+  max-width: 100%;
 }
 
 .project-card {
@@ -60,6 +65,8 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
   display: flex;
   flex-direction: column;
+  width: 100%;
+  max-width: 400px;
 }
 
 .project-card::before {
@@ -93,7 +100,16 @@
   font-size: 3rem;
   margin-bottom: 1rem;
   display: inline-block;
-  animation: float 3s ease-in-out infinite;
+  animation: floatSimple 2s ease-in-out infinite;
+}
+
+@keyframes floatSimple {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 .project-title {
@@ -141,6 +157,29 @@
   color: rgba(255, 255, 255, 0.7);
   font-size: 0.9rem;
   animation: fadeIn 1s ease-out 0.4s both;
+  margin-bottom: 2rem;
+}
+
+.home-signature {
+  position: fixed;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Roboto Mono", monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.6);
+  z-index: 1000;
+  text-align: center;
+  animation: fadeIn 1s ease-out 0.6s both;
+  letter-spacing: 0.1em;
+}
+
+.home-signature span {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 @keyframes fadeInDown {
