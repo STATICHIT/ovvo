@@ -17,6 +17,9 @@
 ### Particle Canvas 文档 (ParticleCanvas/)
 - **[ParticleCanvas_Analysis.md](./ParticleCanvas/ParticleCanvas_Analysis.md)** - 深度技术解析
 
+### Code Rain 文档 (CodeRain/)
+- **[CodeRain_Analysis.md](./CodeRain/CodeRain_Analysis.md)** - 深度技术解析
+
 ---
 
 ## 二、快速导航
@@ -117,9 +120,13 @@ docs/
    - 难度：⭐⭐⭐
    - 文档：[ParticleCanvas/](./ParticleCanvas/)
 
-### 计划中项目
-
 3. **Code Rain** - 代码雨效果
+   - 技术：React + Canvas 2D
+   - 特点：Matrix 风格 + 多颜色模式 + 可收起控制面板
+   - 难度：⭐⭐
+   - 文档：[CodeRain/](./CodeRain/)
+
+### 计划中项目
 4. **Fluid Simulation** - 流体模拟
 5. **3D Product Showcase** - 3D 产品展示
 6. **Music Visualizer** - 音乐可视化

@@ -20,6 +20,14 @@ function Home() {
       tags: ['React', 'Canvas', 'Physics', 'Interactive'],
       icon: '✨',
     },
+    {
+      id: 'code-rain',
+      title: 'Code Rain',
+      description: 'Matrix 风格代码雨效果，可自定义颜色和速度，点击产生波纹',
+      path: '/code-rain',
+      tags: ['React', 'Canvas', 'Animation', 'Matrix'],
+      icon: '🌧️',
+    },
     // 后续可以在这里添加更多项目
   ];
 
