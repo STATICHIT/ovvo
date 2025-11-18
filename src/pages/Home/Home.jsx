@@ -28,6 +28,14 @@ function Home() {
       tags: ['React', 'Canvas', 'Animation', 'Matrix'],
       icon: '🌧️',
     },
+    {
+      id: 'text-animation',
+      title: 'Text Animation',
+      description: '文字动画效果集合：打字机、粒子化、霓虹灯三种炫酷效果',
+      path: '/text-animation',
+      tags: ['React', 'Canvas', 'CSS', 'Typography'],
+      icon: '📝',
+    },
     // 后续可以在这里添加更多项目
   ];
 

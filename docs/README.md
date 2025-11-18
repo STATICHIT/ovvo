@@ -20,6 +20,9 @@
 ### Code Rain 文档 (CodeRain/)
 - **[CodeRain_Analysis.md](./CodeRain/CodeRain_Analysis.md)** - 深度技术解析
 
+### Text Animation 文档 (TextAnimation/)
+- **[TextAnimation_Analysis.md](./TextAnimation/TextAnimation_Analysis.md)** - 深度技术解析
+
 ---
 
 ## 二、快速导航
@@ -126,8 +129,14 @@ docs/
    - 难度：⭐⭐
    - 文档：[CodeRain/](./CodeRain/)
 
+4. **Text Animation** - 文字动画效果
+   - 技术：React + Canvas 2D + CSS
+   - 特点：打字机 + 粒子化 + 霓虹灯三种效果
+   - 难度：⭐⭐
+   - 文档：[TextAnimation/](./TextAnimation/)
+
 ### 计划中项目
-4. **Fluid Simulation** - 流体模拟
+5. **Fluid Simulation** - 流体模拟
 5. **3D Product Showcase** - 3D 产品展示
 6. **Music Visualizer** - 音乐可视化
 

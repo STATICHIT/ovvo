@@ -1,0 +1,323 @@
+.text-animation-page {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  overflow: hidden;
+}
+
+.text-animation-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+/* 打字机效果 */
+.typewriter-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.typewriter-text {
+  font-size: 4rem;
+  font-weight: 900;
+  color: white;
+  margin: 0;
+  font-family: 'Courier New', monospace;
+  text-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+}
+
+.cursor {
+  font-size: 4rem;
+  color: rgba(139, 92, 246, 0.8);
+  animation: blink 1s step-end infinite;
+}
+
+.cursor.typing {
+  animation: none;
+  opacity: 1;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* 粒子化效果 */
+.particles-canvas {
+  width: 1000px;
+  height: 400px;
+  max-width: 90vw;
+}
+
+/* 霓虹灯效果 */
+.neon-container {
+  text-align: center;
+}
+
+.neon-text {
+  font-size: 5rem;
+  font-weight: 900;
+  color: #fff;
+  margin: 0;
+  text-transform: uppercase;
+  animation: flicker 3s ease-in-out infinite;
+  text-shadow:
+    0 0 10px #fff,
+    0 0 20px #fff,
+    0 0 30px #fff,
+    0 0 40px #8b5cf6,
+    0 0 70px #8b5cf6,
+    0 0 80px #8b5cf6,
+    0 0 100px #8b5cf6,
+    0 0 150px #8b5cf6;
+}
+
+.neon-text::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #8b5cf6;
+  z-index: -1;
+  filter: blur(15px);
+}
+
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    text-shadow:
+      0 0 10px #fff,
+      0 0 20px #fff,
+      0 0 30px #fff,
+      0 0 40px #8b5cf6,
+      0 0 70px #8b5cf6,
+      0 0 80px #8b5cf6,
+      0 0 100px #8b5cf6,
+      0 0 150px #8b5cf6;
+  }
+  20%, 24%, 55% {
+    text-shadow: none;
+  }
+}
+
+/* 控制面板 */
+.text-controls {
+  position: fixed;
+  top: 90px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 15px;
+  padding: 1.5rem;
+  z-index: 100;
+  min-width: 280px;
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
+  transition: all 0.3s ease;
+}
+
+.text-controls.open {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.text-controls.closed {
+  opacity: 0;
+  transform: translateX(100%);
+  pointer-events: none;
+}
+
+.text-control-toggle-btn {
+  position: fixed;
+  top: 90px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(139, 92, 246, 0.5);
+  color: rgba(139, 92, 246, 1);
+  font-size: 28px;
+  font-weight: 900;
+  cursor: pointer;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+  animation: pulse 2s ease-in-out infinite;
+  font-family: 'Georgia', serif;
+}
+
+.text-control-toggle-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.6);
+  border-color: rgba(139, 92, 246, 0.8);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.5);
+  }
+}
+
+.text-control-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  line-height: 1;
+  padding: 0;
+}
+
+.text-control-close-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  transform: rotate(90deg);
+}
+
+.text-controls-title {
+  color: rgba(139, 92, 246, 1);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 1.5rem 0;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+}
+
+.text-control-group {
+  margin-bottom: 1.2rem;
+}
+
+.text-control-group label {
+  display: block;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.text-input {
+  width: 100%;
+  padding: 0.6rem;
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 8px;
+  color: white;
+  font-size: 0.9rem;
+  outline: none;
+  transition: all 0.3s ease;
+  font-family: 'Courier New', monospace;
+}
+
+.text-input:focus {
+  background: rgba(139, 92, 246, 0.2);
+  border-color: rgba(139, 92, 246, 0.5);
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.3);
+}
+
+.mode-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.mode-btn {
+  flex: 1;
+  padding: 0.6rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.mode-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.mode-btn.active {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.3), rgba(88, 28, 135, 0.3));
+  border-color: rgba(139, 92, 246, 0.5);
+  color: white;
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.3);
+}
+
+.restart-btn {
+  width: 100%;
+  padding: 0.7rem;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.3), rgba(88, 28, 135, 0.3));
+  border: 1px solid rgba(139, 92, 246, 0.5);
+  border-radius: 8px;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.restart-btn:hover {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.5), rgba(88, 28, 135, 0.5));
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+  transform: translateY(-2px);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .typewriter-text {
+    font-size: 2.5rem;
+  }
+
+  .cursor {
+    font-size: 2.5rem;
+  }
+
+  .neon-text {
+    font-size: 3rem;
+  }
+
+  .text-controls {
+    top: auto;
+    bottom: 20px;
+    right: 20px;
+    left: 20px;
+    min-width: auto;
+  }
+
+  .text-control-toggle-btn {
+    top: auto;
+    bottom: 20px;
+  }
+}
